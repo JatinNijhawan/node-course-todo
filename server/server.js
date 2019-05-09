@@ -9,7 +9,7 @@ let app = express();
 
 app.use(bodyParser.json());
 
-app.post("/todas", (req, res) => {
+app.post("/todos", (req, res) => {
   console.log("req>>>>", req.body);
   let todo = new Todos({
     text: req.body.text
@@ -24,10 +24,11 @@ app.post("/todas", (req, res) => {
   );
 });
 
-app.listen(3001, () => {
+app.listen(3004, () => {
   console.log("Server started on port 3001");
 });
 
+module.exports = { app };
 // let newTodo = new Todo({
 //   text: " Cooking Dinner   "
 // });
