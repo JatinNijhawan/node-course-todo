@@ -24,6 +24,15 @@ app.post("/todos", (req, res) => {
   );
 });
 
+
+app.get("/todos", (req, res) => {
+  Todos.find().then((todos)=>{
+    res.send({todos})
+  },(e)=>{
+    res.send(400).send(err);
+  })
+});
+
 app.listen(3004, () => {
   console.log("Server started on port 3001");
 });
